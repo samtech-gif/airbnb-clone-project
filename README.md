@@ -326,3 +326,28 @@ API activity will be logged to monitor for unusual behavior and potential breach
 -   **Maintaining Platform Integrity**: Preventing unauthorized actions (e.g., property deletion, account hijacking) is essential to keeping the system stable and fair for all users.
 
 ---
+
+---
+
+## CI/CD Pipeline
+
+### What is CI/CD?
+
+CI/CD stands for **Continuous Integration** and **Continuous Deployment (or Delivery)**. It is a development practice that automates the process of testing, building, and deploying code. Every time a change is made to the codebase, the pipeline ensures it is automatically tested and deployed in a consistent, repeatable manner.
+
+### Why It’s Important
+
+-   **Early Bug Detection**: Automated tests catch bugs early in the development cycle.
+-   **Faster Development**: Reduces manual work and allows developers to focus on writing features.
+-   **Consistency**: Ensures that the application is built and deployed the same way every time.
+-   **Improved Collaboration**: Helps teams work together more efficiently with automated feedback loops.
+
+### Tools Used
+
+-   **GitHub Actions**: Used to automate workflows such as running tests, linting code, and deploying the app.
+-   **Docker**: Containerizes the application to ensure consistency across development, testing, and production environments.
+-   **Heroku / AWS / Render** _(optional)_: Platforms where the application can be automatically deployed after a successful build.
+
+> Example: A GitHub Action can run every time code is pushed to the `main` branch, running unit tests and deploying the app if all checks pass.
+
+---

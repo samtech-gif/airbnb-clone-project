@@ -285,3 +285,44 @@ Users can browse listings using filters such as location, price range, date avai
 An admin panel provides tools for managing users, properties, and reported content. This ensures the platform remains safe, organized, and efficient to use.
 
 ---
+
+---
+
+## API Security
+
+Securing the backend APIs is critical to maintaining the integrity, confidentiality, and availability of the Airbnb Clone platform. Below are the core security measures and their importance:
+
+### Authentication
+
+We will implement secure user authentication using tokens (e.g., JWT or session-based authentication). This ensures that only registered users can access protected endpoints. Authentication is crucial for preventing unauthorized access to user accounts and personal data.
+
+### Authorization
+
+Role-based access control (RBAC) will be used to differentiate between hosts, guests, and administrators. For example, only hosts can manage properties, and only guests can make bookings. Authorization ensures users can only perform actions that align with their permissions.
+
+### Rate Limiting
+
+To prevent abuse and DDoS attacks, we will implement rate limiting on API endpoints. This restricts how many requests a client can make in a specific time period, which protects server resources and deters malicious bots.
+
+### Data Encryption
+
+Sensitive data, such as passwords and payment information, will be encrypted both at rest and in transit. HTTPS will be enforced across the entire application to prevent data leaks and man-in-the-middle attacks.
+
+### Input Validation & Sanitization
+
+All incoming data will be validated and sanitized to prevent injection attacks (e.g., SQL injection, XSS). This step is vital to ensure the integrity of the database and application.
+
+### Logging & Monitoring
+
+API activity will be logged to monitor for unusual behavior and potential breaches. This helps with early detection of security incidents and supports audit requirements.
+
+---
+
+### Why Security is Crucial
+
+-   **Protecting User Data**: Personal information like names, emails, and passwords must be securely stored and transmitted.
+-   **Securing Payments**: Any payment-related functionality must be protected against fraud and unauthorized access.
+-   **Ensuring Trust**: A secure platform builds trust with users, encouraging them to use the app for real bookings and interactions.
+-   **Maintaining Platform Integrity**: Preventing unauthorized actions (e.g., property deletion, account hijacking) is essential to keeping the system stable and fair for all users.
+
+---

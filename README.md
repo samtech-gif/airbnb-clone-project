@@ -100,3 +100,35 @@ Sets up continuous integration and deployment (CI/CD) pipelines.
 Manages cloud services, containerization (e.g., Docker), and deployment.
 
 Monitors application uptime and performance in production.
+
+---
+
+## Technology Stack
+
+This project uses the following technologies to build a scalable, maintainable, and feature-rich AirBnB clone:
+
+### Backend
+
+-   **Django**: A high-level Python web framework that encourages rapid development and clean, pragmatic design. It handles routing, business logic, authentication, and RESTful API creation.
+-   **GraphQL** _(optional)_: A flexible query language for APIs. Used to allow clients to request exactly the data they need and nothing more, improving performance and developer experience.
+
+### Database
+
+-   **PostgreSQL**: A powerful, open-source relational database system. It stores user data, property listings, bookings, reviews, etc., and works seamlessly with Django’s ORM.
+
+### Frontend
+
+-   **React** _(or plain JavaScript)_: A JavaScript library for building interactive UIs. It allows us to create reusable components and manage complex frontend states.
+-   **HTML/CSS**: Core technologies for structuring and styling web pages.
+
+### Dev Tools & Infrastructure
+
+-   **Docker** _(optional/advanced)_: Used to containerize the application, ensuring consistent environments across development, testing, and production.
+-   **Git**: Version control system to track changes in code and collaborate with team members.
+-   **GitHub**: Hosting platform for version control and collaboration.
+
+### Testing
+
+-   **Pytest** or **Unittest**: Frameworks for writing and running automated tests to ensure code correctness and stability.
+
+---

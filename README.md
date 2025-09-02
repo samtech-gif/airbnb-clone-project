@@ -132,3 +132,120 @@ This project uses the following technologies to build a scalable, maintainable, 
 -   **Pytest** or **Unittest**: Frameworks for writing and running automated tests to ensure code correctness and stability.
 
 ---
+
+---
+
+---
+
+## Database Design
+
+The application uses a relational database to manage users, property listings, bookings, reviews, and payments. Below are the core entities and their relationships.
+
+### Users
+
+Represents users of the platform, both hosts and guests.
+
+**Fields:**
+
+-   `id` (Primary Key)
+-   `name`
+-   `email` (unique)
+-   `password_hash`
+-   `role` (host or guest)
+
+**Relationships:**
+
+-   A user can **list multiple properties**
+-   A user can **make multiple bookings**
+-   A user can **write multiple reviews**
+
+---
+
+### Properties
+
+Represents property listings created by hosts.
+
+**Fields:**
+
+-   `id` (Primary Key)
+-   `owner_id` (Foreign Key to Users)
+-   `title`
+-   `description`
+-   `location`
+-   `price_per_night`
+
+**Relationships:**
+
+-   A property **belongs to one user** (host)
+-   A property can have **many bookings**
+-   A property can have **many reviews**
+
+---
+
+### Bookings
+
+Represents reservations made by users for properties.
+
+**Fields:**
+
+-   `id` (Primary Key)
+-   `property_id` (Foreign Key to Properties)
+-   `user_id` (Foreign Key to Users)
+-   `start_date`
+-   `end_date`
+-   `status` (e.g., pending, confirmed, canceled)
+
+**Relationships:**
+
+-   A booking **belongs to one user**
+-   A booking **belongs to one property**
+
+---
+
+### Reviews
+
+Users can review properties they have stayed in.
+
+**Fields:**
+
+-   `id` (Primary Key)
+-   `user_id` (Foreign Key to Users)
+-   `property_id` (Foreign Key to Properties)
+-   `rating` (1–5)
+-   `comment`
+
+**Relationships:**
+
+-   A review **belongs to one user**
+-   A review **belongs to one property**
+
+---
+
+### Payments
+
+Tracks transactions made for bookings.
+
+**Fields:**
+
+-   `id` (Primary Key)
+-   `booking_id` (Foreign Key to Bookings)
+-   `amount`
+-   `payment_method` (e.g., credit card, PayPal)
+-   `status` (e.g., paid, refunded)
+
+**Relationships:**
+
+-   A payment **belongs to one booking**
+
+---
+
+### Entity Relationship Summary
+
+-   **User 1 : N Properties**
+-   **User 1 : N Bookings**
+-   **Property 1 : N Bookings**
+-   **Property 1 : N Reviews**
+-   **User 1 : N Reviews**
+-   **Booking 1 : 1 Payment**
+
+---
